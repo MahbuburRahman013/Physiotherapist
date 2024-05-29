@@ -22,7 +22,7 @@ function Navbar() {
     },
     {
       name: 'Services',
-      link: '/service'
+      link: '/services'
     },
     {
       name: 'Blog',
