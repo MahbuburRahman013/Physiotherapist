@@ -32,7 +32,7 @@ function Navbar() {
 
 
   return (
-    <div className="container mx-auto gap-y-5 flex flex-col lg:flex-row justify-between lg:items-center bg-white py-6">
+    <div className="px-3 gap-y-5 flex flex-col lg:flex-row justify-between lg:items-center bg-white py-6">
       <Image src='https://www.physio-therapies.co.uk/wp-content/uploads/2023/11/PHYSIO_THERAPIES_LOGO_-1024x131.png' height={200} width={500} alt='image' />
 
       <div className="flex  justify-between gap-10 items-center">
@@ -46,7 +46,7 @@ function Navbar() {
             toggle ? <RxCross2 /> : <FiMenu />
           }
         </div>
-        <button className="lg:px-20 px-10 lg:py-4 py-3 text-white text-xl font-semibold hover:bg-[#40a5b3] transition duration-300 rounded-full bg-[#4fc0d0]">Contact</button>
+        <button className="sm:px-20 px-14 lg:py-4 py-3 text-white text-xl font-semibold hover:bg-[#40a5b3] transition duration-300 rounded-full bg-[#4fc0d0]">Contact</button>
       </div>
 
       <div className={`${toggle ? 'left-0' : '-left-[500px]'} absolute transition-all z-50 duration-500 top-0 p-3 h-full bg-slate-50 border-l`}>
