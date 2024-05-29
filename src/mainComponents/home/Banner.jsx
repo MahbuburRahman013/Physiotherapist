@@ -23,7 +23,7 @@ function Banner() {
 
 
     return (
-        <div className='relative h-[450px] w-full'>
+        <div className='relative h-[450px]  w-full'>
             <Swiper
                 spaceBetween={30}
                 effect={'fade'}
@@ -49,8 +49,8 @@ function Banner() {
             </Swiper>
             
             <div className='absolute top-0 w-full px-10 flex flex-col justify-center gap-y-5 h-full z-10 bg-[#80aec76f]'>
-                 <h1 className='text-5xl font-bold'>Physiotherapist</h1>
-                 <h1 className='text-5xl font-bold text-white'>Bringing a personal wealth of experience</h1>
+                 <h1 className='md:text-5xl text-3xl font-bold'>Physiotherapist</h1>
+                 <h1 className='md:text-5xl text-3xl font-bold text-white'>Bringing a personal wealth of experience</h1>
             </div>
         </div>
     )
