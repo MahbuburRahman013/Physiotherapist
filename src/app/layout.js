@@ -1,3 +1,4 @@
+import Footer from "@/mainComponents/Footer";
 import Navbar from "@/mainComponents/Navbar";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -12,9 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} relative overflow-x-hidden`}>
+      <body className={`${inter.className} overflow-x-hidden`}>
         <Navbar />
         {children}
+        <Footer/>
       </body>
     </html>
   );

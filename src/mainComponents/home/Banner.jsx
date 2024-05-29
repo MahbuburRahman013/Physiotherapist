@@ -23,7 +23,7 @@ function Banner() {
 
 
     return (
-        <div className='relative h-[450px]  w-full'>
+        <div className='relative h-[70vh]  w-full'>
             <Swiper
                 spaceBetween={30}
                 effect={'fade'}
@@ -32,25 +32,27 @@ function Banner() {
                 autoplay={{
                     delay: 3500,
                     disableOnInteraction: false,
-                  }}
+                }}
                 modules={[EffectFade, Navigation, Autoplay]}
                 className="mySwiper"
             >
                 {
                     images.map((item, index) => <div key={index}>
                         <SwiperSlide className="w-full">
-                            <div style={{backgroundImage:`url(${item})`}} className="w-full bg-center bg-no-repeat bg-cover h-[450px]">
-                                  
+                            <div style={{ backgroundImage: `url(${item})` }} className="w-full bg-center bg-no-repeat bg-cover h-[70vh]">
+
                             </div>
-                            
+
                         </SwiperSlide>
                     </div>)
                 }
             </Swiper>
-            
-            <div className='absolute top-0 w-full md:px-10 px-3 flex flex-col justify-center gap-y-5 h-full z-10 bg-[#80aec76f]'>
-                 <h1 className='md:text-5xl text-3xl font-bold'>Physiotherapist</h1>
-                 <h1 className='md:text-5xl text-3xl font-bold text-white'>Bringing a personal wealth of experience</h1>
+
+            <div className='absolute top-0 w-full  h-full z-10 bg-[#4fc0d040]'>
+                <div className='lg:container mx-auto md:px-10 px-3 flex flex-col justify-center gap-y-5 h-full'>
+                    <h1 className='md:text-5xl text-center md:text-start text-3xl font-bold'>Physiotherapist</h1>
+                    <h1 className='md:text-5xl text-center md:text-start text-3xl font-bold text-white'>Bringing a personal wealth of experience</h1>
+                </div>
             </div>
         </div>
     )
