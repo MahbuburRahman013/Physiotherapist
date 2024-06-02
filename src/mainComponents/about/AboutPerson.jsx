@@ -32,7 +32,7 @@ const data = [
 
                 </div>
                 <div className='md:w-[40%] sm:w-[70%] w-[85%]'>
-                    <Image src={'https://www.physio-therapies.co.uk/wp-content/uploads/2024/03/IMG_9692-1-1024x1024.jpg'} width='530' height={`900`} />
+                    <Image src={'https://www.physio-therapies.co.uk/wp-content/uploads/2024/03/IMG_9692-1-1024x1024.jpg'} width='530' height={`900`} alt='img'/>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@ const data = [
 
             <div className="bg-gray-100 py-20 mt-20">
                 <div className="lg:container px-3 mx-auto sm:font-bold font-semibold">
-                    <h1 className="sm:text-2xl text-xl">You may decide to choose Physiotherapy if you suffer from any Musculoskeletal (MSK) conditions listed below:</h1>
+                    <h1 className="sm:text-2xl text-xl">You may decide to choose Physiotherapy if you suffer from any Musculoskeletal MSK conditions listed below:</h1>
 
                     <div className="grid sm:grid-cols-2 grid-cols-1 gap-5 mt-10">
                         {
@@ -78,8 +78,8 @@ const data = [
                     <p className="font-normal italic text-[19px] mt-10">If you are under 18 years of age you will need to be accompanied by an adult.</p>
                     <p className="font-normal  text-[19px] mt-5">Booking online is self-funding only.  We are unable to reserve appointments.  Appointments unattended are non-refundable.</p>
                     <p className="text-[19px] mt-5">Professional Accreditation</p>
-                    <p className="font-normal text-[19px] mt-5">Chartered Society of Physiotherapy (CSP)</p>
-                    <p className="font-normal text-[19px] mt-5">Health and Care Professions Council (HCPC)</p>
+                    <p className="font-normal text-[19px] mt-5">Chartered Society of Physiotherapy CSP</p>
+                    <p className="font-normal text-[19px] mt-5">Health and Care Professions Council HCPC</p>
                 </div>
             </div>
         </div>

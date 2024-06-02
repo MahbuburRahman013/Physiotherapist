@@ -18,7 +18,7 @@ function Service() {
 
             </div>
             <div className='lg:w-[50%] md:w-[70%] sm:w-[80%] w-[90%]'>
-                <Image src={'https://www.physio-therapies.co.uk/wp-content/uploads/2024/03/AdobeStock_525137929.jpeg'} width='630' height={`900`} />
+                <Image src={'https://www.physio-therapies.co.uk/wp-content/uploads/2024/03/AdobeStock_525137929.jpeg'} width='630' height={`900`} alt='img' />
             </div>
         </div>
     )
