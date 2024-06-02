@@ -13,7 +13,7 @@ function TinaAbout() {
             </Link>
       </div>
       <div className='md:w-[50%] sm:w-[70%] w-[85%]'>
-        <Image src={'https://www.physio-therapies.co.uk/wp-content/uploads/2024/03/IMG_9692-1-1024x1024.jpg'} width='630' height={`900`} alt='img' />
+        <Image src={'https://www.physio-therapies.co.uk/wp-content/uploads/2024/03/IMG_9692-1-1024x1024.jpg'} width='630' height={`900`} alt='img2' />
       </div>
     </div>
   )

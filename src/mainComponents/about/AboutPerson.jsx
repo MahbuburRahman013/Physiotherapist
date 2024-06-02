@@ -27,7 +27,7 @@ const data = [
                     <p className='text-lg'>Provides an advanced physiotherapy service to keep you active with over 25 years of experience across the NHS including London teaching hospitals and private practices.</p>
                     <p className='text-lg'>Complimenting her physiotherapy skills Tina has over 30 years of Health and Fitness teaching and runs Pilates courses to aid clients with musculoskeletal dysfunction.</p>
                     <p className='text-lg'>
-                        Tina’s experience allows her to deliver highly professional assessments and treatments in musculoskeletal, orthopaedics and trauma. This covers the objective measurement of your limitations creating a measurable, realistic, achievable recovery plan. This approach assists in helping guide your rehabilitation goals to the next level.
+                        Tina experience allows her to deliver highly professional assessments and treatments in musculoskeletal, orthopaedics and trauma. This covers the objective measurement of your limitations creating a measurable, realistic, achievable recovery plan. This approach assists in helping guide your rehabilitation goals to the next level.
                     </p>
 
                 </div>
