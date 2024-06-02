@@ -41,7 +41,7 @@ const data = [
 
                     <p className='text-lg'>Expert assessment and treatment can be offered to all, from elite athletes to office workers and school children.  Give your body the care and attention it deserves.</p>
                     <p className='text-lg'>
-                        Physiotherapy is a science and increasingly evidence-based practice, with the aim to restore movement and function. It can also help to reduce your risk of injury or illness in the future. Consultations take a "holistic" approach to your health; looking at all aspects of life which are affected by pain, dysfunction, biomechanics, posture, disease, or aging.
+                        Physiotherapy is a science and increasingly evidence-based practice, with the aim to restore movement and function. It can also help to reduce your risk of injury or illness in the future. Consultations take a holistic approach to your health; looking at all aspects of life which are affected by pain, dysfunction, biomechanics, posture, disease, or aging.
                     </p>
 
 
