@@ -39,7 +39,7 @@ function Footer() {
 
             </div>
             <div className="bg-[#164b60] py-4">
-                 <div className="lg:container mx-auto font-light text-gray-50 flex justify-between lg:flex-row flex-col lg:items-center items-start px-3 gap-y-1">
+                 <div className="lg:container mx-auto font-light text-gray-50 flex justify-between lg:flex-row flex-col lg:items-center items-start text-sm px-3 gap-y-1">
                     <p>© 2024 Physio Therapies. All Rights Reserved.</p>
                     <p className="flex gap-1 items-center">Crafted with care by HealthHosts <CiHeart/></p>
                  </div>

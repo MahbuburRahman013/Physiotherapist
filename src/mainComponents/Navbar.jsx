@@ -33,7 +33,8 @@ function Navbar() {
 
   return (
     <div className="px-3 lg:container mx-auto gap-y-5 flex flex-col lg:flex-row justify-between lg:items-center bg-white py-6">
-      <Image src='https://www.physio-therapies.co.uk/wp-content/uploads/2023/11/PHYSIO_THERAPIES_LOGO_-1024x131.png' height={200} width={500} alt='image' />
+      <Image className="xl:block hidden" src='https://www.physio-therapies.co.uk/wp-content/uploads/2023/11/PHYSIO_THERAPIES_LOGO_-1024x131.png' height={200} width={500} alt='image' />
+      <Image className="xl:hidden block" src='https://www.physio-therapies.co.uk/wp-content/uploads/2023/11/PHYSIO_THERAPIES_LOGO_-1024x131.png' height={200} width={380} alt='image' />
 
       <div className="flex  justify-between gap-10 items-center">
         <div className="lg:flex hidden gap-10 justify-center items-center">
