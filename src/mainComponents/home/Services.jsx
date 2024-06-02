@@ -22,7 +22,7 @@ function Services() {
 
                 <div className='lg:w-[50%] w-full flex flex-col gap-y-10'>
                     <h1 className='text-4xl font-bold'>Physiotherapy services</h1>
-                    <p className='text-lg'>Expert assessment and treatment can be offered to all, from elite athlete to office workers and schoolchildren.  Give your body the care and attention it deserves.  Having years of experience gaining a wide breadth of knowledge and excellent communication skills to you informed whist aiding you.</p>
+                    <p className='text-lg'>Expert assessment and treatment can be offered to all, from elite athlete to office workers and schoolchildren.  Give your body the care and attention it deserves. Having years of experience gaining a wide breadth of knowledge and excellent communication skills to you informed whist aiding you.</p>
                     <Link href={'/'}>
                         <button className="px-12  lg:py-4 py-3 text-white md:text-xl md:font-semibold hover:bg-[#40a5b3] transition duration-300 rounded-full bg-[#4fc0d0]">Read More</button>
                     </Link>
