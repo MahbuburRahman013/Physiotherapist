@@ -1,4 +1,6 @@
 import Banner from "@/mainComponents/home/Banner";
+import Blog from "@/mainComponents/home/Blog";
+import Contact from "@/mainComponents/home/Contact";
 import Help from "@/mainComponents/home/Help";
 import Services from "@/mainComponents/home/Services";
 import Testimonial from "@/mainComponents/home/Testimonial";
@@ -12,6 +14,8 @@ export default function Home() {
       <TinaAbout/>
       <Services/>
       <Help/>
+      <Blog/>
+      <Contact/>
       <Testimonial/>
     </div>
   )

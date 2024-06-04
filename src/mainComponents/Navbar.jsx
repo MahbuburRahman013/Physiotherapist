@@ -50,11 +50,15 @@ function Navbar() {
         <button className="sm:px-20 px-14 lg:py-4 py-3 text-white md:text-xl md:font-semibold hover:bg-[#40a5b3] transition duration-300 rounded-full bg-[#4fc0d0]">Contact</button>
       </div>
 
-      <div className={`${toggle ? 'left-0' : '-left-[500px]'} absolute transition-all z-50 duration-500 top-0 p-3 h-full bg-slate-50 border-l`}>
-        <RxCross2 onClick={()=> setToggle(!toggle)} className="cursor-pointer text-2xl" />
+      {/* mobile navbar */}
+
+      <div className={`${toggle ? 'left-0' : '-left-[500px]'} fixed transition-all z-50 duration-500 top-0 p-3 h-full bg-slate-50 border-l`}>
+        <div className="w-full flex justify-end">
+          <RxCross2 onClick={() => setToggle(!toggle)} className="cursor-pointer text-2xl border border-gray-100 p-[2px] rounded" />
+        </div>
         <div className="flex gap-4 justify-start px-20 pt-24 flex-col h-full items-center">
           {
-            navLinks.map((item, index) => <Link className={` ${pathname === item.link ? 'text-[#1b6b93]' : ''} text-lg hover:text-[#1b6b93] font-semibold`} key={index} href={item.link}>{item.name}</Link>)
+            navLinks.map((item, index) => <Link onClick={() => setToggle(!toggle)} className={` ${pathname === item.link ? 'text-[#1b6b93]' : ''} text-lg hover:text-[#1b6b93] font-semibold`} key={index} href={item.link}>{item.name}</Link>)
           }
         </div>
       </div>
