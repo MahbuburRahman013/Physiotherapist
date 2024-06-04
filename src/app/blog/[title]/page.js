@@ -1,6 +1,6 @@
 import SingleBlog from "@/mainComponents/singleBlog/SingleBlog";
 
-function BlogDynamicPage({ params }) {
+function BlogDynamicPage() {
   // const title1 = decodeURIComponent(params.title);
 
   return (
