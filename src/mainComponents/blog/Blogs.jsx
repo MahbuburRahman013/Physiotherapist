@@ -1,10 +1,15 @@
 "use client"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 import { PiArrowElbowRightFill } from "react-icons/pi"
 
 
 function Blogs({ blogs }) {
+
+   
+        const stripHtmlTags = (html) => {
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            return doc.body.textContent || "";
+        };
 
   
 
@@ -15,20 +20,15 @@ function Blogs({ blogs }) {
 
             <div className="grid w-full lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 mt-16 ">
                 {
-                    blogs.map((item, index) => {
-                        const [textContent, setTextContent] = useState('');
+                    blogs?.map((item, index) => {
 
-                        const stripHtmlTags = (html) => {
-                            const doc = new DOMParser().parseFromString(html, 'text/html');
-                            return doc.body.textContent || "";
-                        };
-                    
-                        
-                        useEffect(() => {
-                            const text = stripHtmlTags(item.content);
-                            setTextContent(text);
-                        }, [item.content]);
-                    
+
+
+
+
+                        const text = stripHtmlTags(item.content);
+
+
 
 
                         return (
@@ -39,7 +39,7 @@ function Blogs({ blogs }) {
                                 <div>
                                     <h1 className="text-2xl font-semibold mb-3 text-[#343434]">{item?.title}</h1>
                                     <p className="text-[#084c61] font-semibold">June 4, 2024</p>
-                                    <p className="line-clamp-3">{textContent}</p>
+                                    <p className="line-clamp-3">{text}</p>
                                     <Link href={`/blog/${item.title}`}>
                                         <button className="flex text-[#e7a977] gap-2 items-center text-lg mt-3 font-semibold">Read More <PiArrowElbowRightFill /></button>
                                     </Link>

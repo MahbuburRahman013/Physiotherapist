@@ -1,10 +1,10 @@
 import useAxiosPublic from "./useAxiosPublic"
 
 
- const useGetAllBlogs = async () => {
+ async function useGetAllBlogs() {
     const axiosPublic = useAxiosPublic()
     const result = await axiosPublic.get('/all-blogs');
-    return result;
+    return result
 
 }
 
