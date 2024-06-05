@@ -5,7 +5,7 @@ import Banner from "@/mainComponents/sheared/Banner"
 
 async function BlogPage() {
    const {data : blogs} = await useGetAllBlogs()
-   console.log(blogs)
+  
 
   return (
     <div>

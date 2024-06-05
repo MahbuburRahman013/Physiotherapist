@@ -1,17 +1,11 @@
 "use client"
+import cheerio from 'cheerio';
 import Link from "next/link"
 import { PiArrowElbowRightFill } from "react-icons/pi"
 
 
 function Blogs({ blogs }) {
 
-   
-        // const stripHtmlTags = (html) => {
-        //     const doc = new DOMParser().parseFromString(html, 'text/html');
-        //     return doc.body.textContent || "";
-        // };
-
-  
 
     return (
         <div className="lg:container mx-auto px-3 my-20">
@@ -23,13 +17,8 @@ function Blogs({ blogs }) {
                     blogs?.map((item, index) => {
 
 
-
-
-
-                        // const text = stripHtmlTags(item.content);
-
-
-
+                        const data = cheerio.load(item.content);
+                        const textContent = data('body').text();
 
                         return (
 
@@ -39,7 +28,7 @@ function Blogs({ blogs }) {
                                 <div>
                                     <h1 className="text-2xl font-semibold mb-3 text-[#343434]">{item?.title}</h1>
                                     <p className="text-[#084c61] font-semibold">June 4, 2024</p>
-                                    <p className="line-clamp-3">{item.content}</p>
+                                    <p className="line-clamp-3">{textContent}</p>
                                     <Link href={`/blog/${item.title}`}>
                                         <button className="flex text-[#e7a977] gap-2 items-center text-lg mt-3 font-semibold">Read More <PiArrowElbowRightFill /></button>
                                     </Link>
