@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
+import { MdSpaceDashboard } from "react-icons/md";
 
 
 function Navbar() {
@@ -27,6 +28,10 @@ function Navbar() {
     {
       name: 'Blog',
       link: '/blog'
+    },
+    {
+      name: <MdSpaceDashboard/>,
+      link: '/dashboard'
     },
   ]
 

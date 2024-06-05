@@ -1,11 +1,14 @@
+import useGetSingleBlog from "@/hooks/useGetSingleBlog";
 import SingleBlog from "@/mainComponents/singleBlog/SingleBlog";
 
-function BlogDynamicPage() {
-  // const title1 = decodeURIComponent(params.title);
+async function BlogDynamicPage({params}) {
+  const title = decodeURIComponent(params.title);
+  const {data: blog} = await useGetSingleBlog(title)
+  
 
   return (
     <div>
-      <SingleBlog />
+      <SingleBlog blog={blog} />
     </div>
   );
 }

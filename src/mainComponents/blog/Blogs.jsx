@@ -1,34 +1,12 @@
+"use client"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 import { PiArrowElbowRightFill } from "react-icons/pi"
 
 
-function Blogs() {
+function Blogs({ blogs }) {
 
-    const data = [
-        {
-            img: 'https://assets-global.website-files.com/64e45036e4ad113bb6622008/66387fa787023dddf0747547_blog-88.webp',
-            title: 'The Science Behind Chiro and Spinal Health',
-            description: 'Discover the science behind chiropractic care and its impact on spinal health. Learn how chiropractic adjustments can alleviate pain, improve mobil'
-        },
-        {
-            img: 'https://assets-global.website-files.com/64e45036e4ad113bb6622008/66387fa787023dddf0747547_blog-88.webp',
-            title: 'The Science Behind Chiro and Spinal Health',
-            description: 'Discover the science behind chiropractic care and its impact on spinal health. Learn how chiropractic adjustments can alleviate pain, improve mobil'
-        },
-        {
-            img: 'https://assets-global.website-files.com/64e45036e4ad113bb6622008/66387fa787023dddf0747547_blog-88.webp',
-            title: 'The Science Behind Chiro and Spinal Health',
-            description: 'Discover the science behind chiropractic care and its impact on spinal health. Learn how chiropractic adjustments can alleviate pain, improve mobil'
-        },
-        {
-            img: 'https://assets-global.website-files.com/64e45036e4ad113bb6622008/66387fa787023dddf0747547_blog-88.webp',
-            title: 'The Science Behind Chiro and Spinal Health',
-            description: 'Discover the science behind chiropractic care and its impact on spinal health. Learn how chiropractic adjustments can alleviate pain, improve mobil'
-        },
-    ]
-
-
-
+  
 
     return (
         <div className="lg:container mx-auto px-3 my-20">
@@ -37,16 +15,31 @@ function Blogs() {
 
             <div className="grid w-full lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 mt-16 ">
                 {
-                    data.map((item, index) => {
+                    blogs.map((item, index) => {
+                        const [textContent, setTextContent] = useState('');
+
+                        const stripHtmlTags = (html) => {
+                            const doc = new DOMParser().parseFromString(html, 'text/html');
+                            return doc.body.textContent || "";
+                        };
+                    
+                        
+                        useEffect(() => {
+                            const text = stripHtmlTags(item.content);
+                            setTextContent(text);
+                        }, [item.content]);
+                    
+
+
                         return (
 
                             <div key={index} className="flex flex-col gap-5 justify-between">
-                                <div className="xl:w-full"><img className="rounded-[10px] w-full" src={item.img} /></div>
+                                <div className="xl:w-full h-[230px]"><img className="rounded-[10px] w-full h-full" src={item.img_url} /></div>
 
                                 <div>
-                                    <h1 className="text-2xl font-semibold mb-3 text-[#343434]">{item.title}</h1>
+                                    <h1 className="text-2xl font-semibold mb-3 text-[#343434]">{item?.title}</h1>
                                     <p className="text-[#084c61] font-semibold">June 4, 2024</p>
-                                    <p>{item.description}</p>
+                                    <p className="line-clamp-3">{textContent}</p>
                                     <Link href={`/blog/${item.title}`}>
                                         <button className="flex text-[#e7a977] gap-2 items-center text-lg mt-3 font-semibold">Read More <PiArrowElbowRightFill /></button>
                                     </Link>
