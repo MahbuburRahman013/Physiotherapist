@@ -1,9 +1,8 @@
+"use client"
 import React, { useState } from 'react';
 import FroalaEditor from 'react-froala-wysiwyg';
 import 'froala-editor/js/froala_editor.pkgd.min.js';
 import 'froala-editor/js/plugins/font_size.min.js';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
-import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/js/plugins/align.min.js';
 import 'froala-editor/js/plugins/char_counter.min.js';
 import { Label } from '@/components/ui/label';
@@ -17,12 +16,14 @@ import 'froala-editor/js/plugins/paragraph_format.min.js';
 
 const img_hosting_api = `https://api.imgbb.com/1/upload?key=dba83ae483256811942a712f4a815835`
 
+
+
 function Dashboard() {
     const [content, setContent] = useState('');
     const axiosPublic = useAxiosPublic();
     const [loading, setLoading] = useState(false)
-   
-    
+  
+
 
     const handleModelChange = (model) => {
         setContent(model);
@@ -65,7 +66,7 @@ function Dashboard() {
 
     };
 
-    
+   
 
     return (
         <div className="lg:container mx-auto my-20 rounded-md p-4  shadow-lg border">
