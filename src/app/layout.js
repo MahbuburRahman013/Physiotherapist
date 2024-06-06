@@ -2,6 +2,8 @@ import Footer from "@/mainComponents/Footer";
 import Navbar from "@/mainComponents/Navbar";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import 'froala-editor/css/froala_style.min.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
