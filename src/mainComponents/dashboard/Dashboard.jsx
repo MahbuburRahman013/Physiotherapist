@@ -1,4 +1,3 @@
-"use client"
 import React, { useState } from 'react';
 import FroalaEditor from 'react-froala-wysiwyg';
 import 'froala-editor/js/froala_editor.pkgd.min.js';
