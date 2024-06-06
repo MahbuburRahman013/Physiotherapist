@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FroalaEditor from 'react-froala-wysiwyg';
 import 'froala-editor/js/froala_editor.pkgd.min.js';
 import 'froala-editor/js/plugins/font_size.min.js';
@@ -22,9 +22,14 @@ function Dashboard() {
     const [content, setContent] = useState('');
     const axiosPublic = useAxiosPublic();
     const [loading, setLoading] = useState(false)
-  
+    const [isClient, setIsClient] = useState(false);
 
-
+    useEffect(() => {
+      // Set isClient to true after the component is mounted
+      setIsClient(true);
+    }, []);
+   
+    
     const handleModelChange = (model) => {
         setContent(model);
     };
@@ -66,7 +71,10 @@ function Dashboard() {
 
     };
 
-   
+    if (!isClient) {
+        // Render nothing on the server side
+        return null;
+      }
 
     return (
         <div className="lg:container mx-auto my-20 rounded-md p-4  shadow-lg border">
