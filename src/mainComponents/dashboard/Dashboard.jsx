@@ -61,7 +61,7 @@ function Dashboard() {
                 .then(res => {
                     if (res.data.acknowledged) {
                         setLoading(false)
-                        window.alert('added post')
+                       
                     }
                 })
                 .catch(err=> {
