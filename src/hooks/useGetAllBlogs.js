@@ -1,9 +1,11 @@
-import useAxiosPublic from "./useAxiosPublic"
+
+
 
 
  async function useGetAllBlogs() {
-    const axiosPublic = useAxiosPublic()
-    const result = await axiosPublic.get('/all-blogs');
+    const result = await fetch('/all-blogs', {
+         cache:'no-cache'
+    });
     return result
 
 }
