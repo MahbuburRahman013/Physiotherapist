@@ -1,12 +1,12 @@
 
 
-
-
  async function useGetAllBlogs() {
-    const result = await fetch('/all-blogs', {
-         cache:'no-cache'
+    const result = await fetch('https://physiotherapistserver.vercel.app/all-blogs', {
+         next:{
+          revalidate: 10 ,
+         }
     });
-    return result
+    return result.json()
 
 }
 

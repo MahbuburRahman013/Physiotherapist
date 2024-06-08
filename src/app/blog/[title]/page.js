@@ -1,5 +1,8 @@
 import useGetSingleBlog from "@/hooks/useGetSingleBlog";
-import SingleBlog from "@/mainComponents/singleBlog/SingleBlog";
+import dynamic from 'next/dynamic'
+const SingleBlog = dynamic(() => import('@/mainComponents/singleBlog/SingleBlog'), {
+  ssr: false,
+})
 
 async function BlogDynamicPage({params}) {
   const title =  decodeURIComponent(params.title);
