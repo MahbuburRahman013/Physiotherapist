@@ -4,7 +4,7 @@ import Banner from "@/mainComponents/sheared/Banner"
 
 
 async function BlogPage() {
-   const blogs = await useGetAllBlogs()
+   const blogs = await useGetAllBlogs('')
   
 
   return (
