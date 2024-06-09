@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import 'froala-editor/js/plugins/lists.min.js';
 import 'froala-editor/js/plugins/paragraph_format.min.js';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const img_hosting_api = `https://api.imgbb.com/1/upload?key=dba83ae483256811942a712f4a815835`
@@ -25,11 +26,11 @@ function Dashboard() {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
-      // Set isClient to true after the component is mounted
-      setIsClient(true);
+        // Set isClient to true after the component is mounted
+        setIsClient(true);
     }, []);
-   
-    
+
+
     const handleModelChange = (model) => {
         setContent(model);
     };
@@ -55,16 +56,22 @@ function Dashboard() {
             content
         };
 
+        if (!content.trim()) {
+            setLoading(false)
+            return toast.error('Blog description is missing')
+        }
+
         if (img_url) {
 
             axiosPublic.post('/single-blog', { formData })
                 .then(res => {
                     if (res.data.acknowledged) {
                         setLoading(false)
-                       
+                        toast.success('Blog post successfully!')
+
                     }
                 })
-                .catch(err=> {
+                .catch(err => {
                     setLoading(false)
                 })
         }
@@ -74,7 +81,7 @@ function Dashboard() {
     if (!isClient) {
         // Render nothing on the server side
         return null;
-      }
+    }
 
     return (
         <div className="lg:container mx-auto my-20 rounded-md p-4  shadow-lg border">
@@ -101,12 +108,12 @@ function Dashboard() {
                         toolbarButtons: [
                             'bold', 'italic', 'underline',
                             'fontSize', 'color',
-                            'outdent', 'indent', 'undo', 'redo', 'clearFormatting', 'selectAll', 'align','formatOL', 'formatUL'
+                            'outdent', 'indent', 'undo', 'redo', 'clearFormatting', 'selectAll', 'align', 'formatOL', 'formatUL'
                         ],
                         fontSizeSelection: true,
                         fontSize: ['8', '10', '12', '14', '16', '18', '24', '30', '36', '42', '48'],
                         listAdvancedTypes: true,
-                       
+
 
                     }}
                 />
@@ -127,7 +134,7 @@ function Dashboard() {
 
             </form>
 
-
+            <Toaster />
         </div>
     );
 }

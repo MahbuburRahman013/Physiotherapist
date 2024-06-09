@@ -30,7 +30,7 @@ function Blogs({ blogs }) {
                                     <p className="text-[#084c61] font-semibold">June 4, 2024</p>
                                     <p className="line-clamp-3">{textContent}</p>
                                     <Link href={`/blog/${item.title}`}>
-                                        <button className="flex text-[#e7a977] gap-2 items-center text-lg mt-3 font-semibold">Read More <PiArrowElbowRightFill /></button>
+                                        <button className="flex text-[#e7a977] gap-2 items-center text-lg mt-3 font-semibold hover:text-[#e38537] transition duration-300">Read More <PiArrowElbowRightFill /></button>
                                     </Link>
                                 </div>
 

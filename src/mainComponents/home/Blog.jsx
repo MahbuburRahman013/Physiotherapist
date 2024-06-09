@@ -1,31 +1,12 @@
+"use client"
+import cheerio from 'cheerio';
 import Link from "next/link"
 import { PiArrowElbowRightFill } from "react-icons/pi";
 
 
-function Blog() {
+function Blog({blogs}) {
 
-    const data = [
-        {
-            img: 'https://assets-global.website-files.com/64e45036e4ad113bb6622008/66387fa787023dddf0747547_blog-88.webp',
-            title: 'The Science Behind Chiro and Spinal Health',
-            description: 'Discover the science behind chiropractic care and its impact on spinal health. Learn how chiropractic adjustments can alleviate pain, improve mobil'
-        },
-        {
-            img: 'https://assets-global.website-files.com/64e45036e4ad113bb6622008/66387fa787023dddf0747547_blog-88.webp',
-            title: 'The Science Behind Chiro and Spinal Health',
-            description: 'Discover the science behind chiropractic care and its impact on spinal health. Learn how chiropractic adjustments can alleviate pain, improve mobil'
-        },
-        {
-            img: 'https://assets-global.website-files.com/64e45036e4ad113bb6622008/66387fa787023dddf0747547_blog-88.webp',
-            title: 'The Science Behind Chiro and Spinal Health',
-            description: 'Discover the science behind chiropractic care and its impact on spinal health. Learn how chiropractic adjustments can alleviate pain, improve mobil'
-        },
-        {
-            img: 'https://assets-global.website-files.com/64e45036e4ad113bb6622008/66387fa787023dddf0747547_blog-88.webp',
-            title: 'The Science Behind Chiro and Spinal Health',
-            description: 'Discover the science behind chiropractic care and its impact on spinal health. Learn how chiropractic adjustments can alleviate pain, improve mobil'
-        },
-    ]
+   
 
 
 
@@ -34,18 +15,25 @@ function Blog() {
             <h1 className="text-4xl font-bold text-center text-[#343434]">Latest Blogs &amp; Articles</h1>
 
             <div className="grid w-full md:grid-cols-2 grid-cols-1 gap-10 mt-16 ">
-                {
-                    data.map((item, index) => {
+            {
+                    blogs?.map((item, index) => {
+
+
+                        const data = cheerio.load(item.content);
+                        const textContent = data('body').text();
+
                         return (
 
-                            <div key={index} className="flex flex-col xl:flex-row gap-5 justify-between">
-                                <div className="xl:w-full"><img className="rounded-[10px] w-full" src={item.img} /></div>
+                            <div key={index} className="flex lg:flex-row flex-col gap-5 ">
+                                <img className="rounded-[10px] lg:w-[45%] md:w-[80%]
+                                w-[90%] md:mx-0 mx-auto h-[200px]" src={item.img_url} />
 
-                                <div>
-                                    <h1 className="text-2xl font-semibold mb-3 text-[#084c61]">{item.title}</h1>
-                                    <p>{item.description}</p>
-                                    <Link href='/'>
-                                        <button className="flex text-[#e7a977] gap-2 items-center text-lg mt-3 font-semibold">Read More <PiArrowElbowRightFill /></button>
+                                <div className='lg:w-[55%] w-full'>
+                                    <h1 className="text-2xl font-semibold mb-3 text-[#343434]">{item?.title}</h1>
+                                    <p className="text-[#084c61] font-semibold">June 4, 2024</p>
+                                    <p className="line-clamp-3">{textContent}</p>
+                                    <Link href={`/blog/${item.title}`}>
+                                        <button className="flex text-[#e7a977] gap-2 items-center text-lg mt-3 font-semibold hover:text-[#e38537] transition duration-300">Read More <PiArrowElbowRightFill /></button>
                                     </Link>
                                 </div>
 

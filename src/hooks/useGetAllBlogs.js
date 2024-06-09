@@ -1,7 +1,7 @@
 
 
- async function useGetAllBlogs() {
-    const result = await fetch('https://physiotherapistserver.vercel.app/all-blogs', {
+ async function useGetAllBlogs(limit) {
+    const result = await fetch(`http://localhost:5000/all-blogs?limit=${limit}`, {
          next:{
           revalidate: 10 ,
          }

@@ -1,3 +1,4 @@
+import useGetAllBlogs from "@/hooks/useGetAllBlogs";
 import Banner from "@/mainComponents/home/Banner";
 import Blog from "@/mainComponents/home/Blog";
 import Contact from "@/mainComponents/home/Contact";
@@ -7,14 +8,16 @@ import Testimonial from "@/mainComponents/home/Testimonial";
 import TinaAbout from "@/mainComponents/home/TinaAbout";
 
 
-export default function Home() {
+export default async function Home() {
+  const blogs = await useGetAllBlogs(4)
+ 
   return (
-    <div className="">
+    <div>
       <Banner/>
       <TinaAbout/>
       <Services/>
       <Help/>
-      <Blog/>
+      <Blog blogs={blogs} />
       <Contact/>
       <Testimonial/>
     </div>
