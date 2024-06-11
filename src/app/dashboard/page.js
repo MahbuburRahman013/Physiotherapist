@@ -7,7 +7,7 @@ const Dashboard = dynamic(() => import('@/mainComponents/dashboard/Dashboard'), 
 function DashboardPage() {
 
   return (
-    <div className="px-3">
+    <div>
         <Dashboard/>
     </div>
   )

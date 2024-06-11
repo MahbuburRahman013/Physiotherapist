@@ -42,6 +42,7 @@ function Dashboard() {
         e.preventDefault()
         const form = e.target;
         const title = form.title.value;
+        const queryTitle = title.toLowerCase().split(' ').join('-');
         const photo = form.photo.files[0];
         const imgFile = { image: photo }
         const res = await axiosPublic.post(img_hosting_api, imgFile, {
@@ -53,6 +54,7 @@ function Dashboard() {
         const formData = {
             title,
             img_url,
+            queryTitle,
             content
         };
 
@@ -84,7 +86,8 @@ function Dashboard() {
     }
 
     return (
-        <div className="lg:container mx-auto my-20 rounded-md p-4  shadow-lg border">
+        <div className="min-h-screen ">
+            <div className='rounded-md p-4 w-full shadow-lg border'>
             <h1 className='mb-6 font-semibold text-3xl '>Post A Blog</h1>
             <form onSubmit={submitPost} className='w-full flex flex-col gap-y-5'>
 
@@ -133,6 +136,7 @@ function Dashboard() {
                 }
 
             </form>
+            </div>
 
             <Toaster />
         </div>

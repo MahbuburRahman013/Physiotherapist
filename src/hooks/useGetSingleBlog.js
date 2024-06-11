@@ -1,9 +1,9 @@
 import useAxiosPublic from "./useAxiosPublic";
 
 
-async function useGetSingleBlog(title) {
+async function useGetSingleBlog(queryTitle) {
     const axiosPublic = useAxiosPublic()
-    const result = await axiosPublic.get(`/single-blog/${title}`);
+    const result = await axiosPublic.get(`/single-blog/${queryTitle}`);
     return result;
 }
 
