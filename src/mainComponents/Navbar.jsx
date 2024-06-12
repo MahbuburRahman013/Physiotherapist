@@ -31,7 +31,7 @@ function Navbar() {
     },
     {
       name: <MdSpaceDashboard/>,
-      link: '/dashboard'
+      link: '/auth'
     },
   ]
 
