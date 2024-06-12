@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
 import { MdSpaceDashboard } from "react-icons/md";
@@ -11,6 +11,14 @@ import { MdSpaceDashboard } from "react-icons/md";
 function Navbar() {
   const pathname = usePathname()
   const [toggle, setToggle] = useState(false)
+  const [adminInfo, setAdminInfo] = useState(null);
+
+  useEffect(() => {
+    const adminInfo = localStorage.getItem('adminInfo');
+    const parseInfo = JSON.parse(adminInfo)
+    setAdminInfo(parseInfo);
+    return ()=> setAdminInfo(adminInfo);
+}, [])
 
   const navLinks = [
     {
@@ -31,7 +39,7 @@ function Navbar() {
     },
     {
       name: <MdSpaceDashboard/>,
-      link: '/auth'
+      link: adminInfo ? '/dashboard' : '/auth',
     },
   ]
 

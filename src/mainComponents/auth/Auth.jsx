@@ -16,6 +16,8 @@ function Auth() {
       
       if(email === 'admin@gmail.com' && password === 'admin'){
           route.push('/dashboard')
+          const adminInfo = JSON.stringify({email,password})
+          localStorage.setItem('adminInfo', adminInfo);
           toast.success('loggedIn successfully!')
       }else{
           toast.error('incorrect password or email!')
