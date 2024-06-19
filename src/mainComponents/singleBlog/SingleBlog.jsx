@@ -12,7 +12,7 @@ function SingleBlog({blog}) {
             <div className="relative lg:w-[65%] sm:w-[80%] w-[95%] aspect-auto lg:h-[450px] md:h-[350px] sm:h-[250px] h-[200px] mx-auto md:my-20 my-10">
                 <Image layout="fill" src={blog?.img_url} />
             </div>
-           
+           <p className="mb-5 text-[#1b6b93]">{blog?.postedDate}</p>
             <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
            
         </div >

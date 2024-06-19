@@ -9,21 +9,27 @@ import Testimonial from "@/mainComponents/home/Testimonial";
 import TinaAbout from "@/mainComponents/home/TinaAbout";
 import Navbar from "@/mainComponents/Navbar";
 
-
 export default async function Home() {
-  const blogs = await useGetAllBlogs(4)
- 
+  const blogs1 = await useGetAllBlogs(4);
+
+  function parseDate(dateStr) {
+    return new Date(dateStr);
+  }
+
+  const blogs = blogs1.sort((a, b) => {
+    return parseDate(b?.postedDate) - parseDate(a?.postedDate);
+  });
   return (
     <div>
-      <Navbar/>
-      <Banner/>
-      <TinaAbout/>
-      <Services/>
-      <Help/>
+      <Navbar />
+      <Banner />
+      <TinaAbout />
+      <Services />
+      <Help />
       <Blog blogs={blogs} />
-      <Contact/>
-      <Testimonial/>
-      <Footer/>
+      <Contact />
+      <Testimonial />
+      <Footer />
     </div>
-  )
+  );
 }

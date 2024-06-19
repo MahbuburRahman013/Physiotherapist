@@ -4,8 +4,15 @@ import Banner from "@/mainComponents/sheared/Banner"
 
 
 async function BlogPage() {
-   const blogs = await useGetAllBlogs('')
+   const blogs1 = await useGetAllBlogs('')
   
+   function parseDate(dateStr) {
+    return new Date(dateStr);
+  }
+
+  const blogs = blogs1.sort((a, b) => {
+    return parseDate(b?.postedDate) - parseDate(a?.postedDate);
+  });
 
   return (
     <div>

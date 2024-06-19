@@ -7,7 +7,7 @@ const SingleBlog = dynamic(() => import('@/mainComponents/singleBlog/SingleBlog'
 async function BlogDynamicPage({params}) {
   const queryTitle =  params.title;
   const {data: blog} = await useGetSingleBlog(queryTitle)
-console.log(blog, queryTitle);  
+// console.log(blog, queryTitle);  
 
   return (
     <div>

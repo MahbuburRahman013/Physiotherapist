@@ -51,11 +51,25 @@ function Dashboard() {
             }
         })
         const img_url = res?.data?.data?.display_url;
+
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        // create date
+        const currentDate = new Date();
+        const day = currentDate.getDate();
+        const month = monthNames[currentDate.getMonth()]; 
+        const year = currentDate.getFullYear();
+        const postedDate = `${month} ${day}, ${year}`;
+
         const formData = {
             title,
             img_url,
             queryTitle,
-            content
+            content,
+            postedDate
         };
 
         if (!content.trim()) {
@@ -76,6 +90,9 @@ function Dashboard() {
                 .catch(err => {
                     setLoading(false)
                 })
+        }else{
+            toast.error('Photo is not support!')
+            setLoading(false)
         }
 
     };
@@ -88,54 +105,54 @@ function Dashboard() {
     return (
         <div className="min-h-screen ">
             <div className='rounded-md p-4 w-full shadow-lg border'>
-            <h1 className='mb-6 font-semibold text-3xl '>Post A Blog</h1>
-            <form onSubmit={submitPost} className='w-full flex flex-col gap-y-5'>
+                <h1 className='mb-6 font-semibold text-3xl '>Post A Blog</h1>
+                <form onSubmit={submitPost} className='w-full flex flex-col gap-y-5'>
 
-                <div className="mb-2 w-full md:w-[80%] lg:w-[60%] xl:w-[50%] rounded">
-                    <Label htmlFor="title">Title</Label>
-                    <Input required name='title' id='title' type="text" placeholder="Title" />
-                </div>
+                    <div className="mb-2 w-full md:w-[80%] lg:w-[60%] xl:w-[50%] rounded">
+                        <Label htmlFor="title">Title</Label>
+                        <Input required name='title' id='title' type="text" placeholder="Title" />
+                    </div>
 
-                <div className="mb-2 w-full cursor-pointer md:w-[80%] lg:w-[60%] xl:w-[50%] rounded">
-                    <Label htmlFor="picture">Banner Photo</Label>
-                    <Input required name='photo' id="picture" type="file" />
-                </div>
+                    <div className="mb-2 w-full cursor-pointer md:w-[80%] lg:w-[60%] xl:w-[50%] rounded">
+                        <Label htmlFor="picture">Banner Photo</Label>
+                        <Input required name='photo' id="picture" type="file" />
+                    </div>
 
-                <FroalaEditor
-                    tag='textarea'
-                    model={content}
-                    onModelChange={handleModelChange}
-                    config={{
-                        placeholderText: 'Edit Your Blog Details Here!',
-                        charCounterCount: false,
-                        toolbarButtons: [
-                            'bold', 'italic', 'underline',
-                            'fontSize', 'color',
-                            'outdent', 'indent', 'undo', 'redo', 'clearFormatting', 'selectAll', 'align', 'formatOL', 'formatUL'
-                        ],
-                        fontSizeSelection: true,
-                        fontSize: ['8', '10', '12', '14', '16', '18', '24', '30', '36', '42', '48'],
-                        listAdvancedTypes: true,
+                    <FroalaEditor
+                        tag='textarea'
+                        model={content}
+                        onModelChange={handleModelChange}
+                        config={{
+                            placeholderText: 'Edit Your Blog Details Here!',
+                            charCounterCount: false,
+                            toolbarButtons: [
+                                'bold', 'italic', 'underline',
+                                'fontSize', 'color',
+                                'outdent', 'indent', 'undo', 'redo', 'clearFormatting', 'selectAll', 'align', 'formatOL', 'formatUL'
+                            ],
+                            fontSizeSelection: true,
+                            fontSize: ['8', '10', '12', '14', '16', '18', '24', '30', '36', '42', '48'],
+                            listAdvancedTypes: true,
 
 
-                    }}
-                />
+                        }}
+                    />
 
-                {
-                    loading ?
-                        <Button className='w-fit rounded-md' disabled>
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            Please wait
-                        </Button> :
-                        <Button
-                            type='submit'
-                            className='w-fit lg:px-12 px-5 rounded-md'
-                        >
-                            Submit
-                        </Button>
-                }
+                    {
+                        loading ?
+                            <Button className='w-fit rounded-md' disabled>
+                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                Please wait
+                            </Button> :
+                            <Button
+                                type='submit'
+                                className='w-fit lg:px-12 px-5 rounded-md'
+                            >
+                                Submit
+                            </Button>
+                    }
 
-            </form>
+                </form>
             </div>
 
             <Toaster />
