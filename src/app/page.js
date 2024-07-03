@@ -4,6 +4,7 @@ import Banner from "@/mainComponents/home/Banner";
 import Blog from "@/mainComponents/home/Blog";
 import Contact from "@/mainComponents/home/Contact";
 import Help from "@/mainComponents/home/Help";
+import OurTeam from "@/mainComponents/home/OurTeam";
 import Services from "@/mainComponents/home/Services";
 import Testimonial from "@/mainComponents/home/Testimonial";
 import TinaAbout from "@/mainComponents/home/TinaAbout";
@@ -24,6 +25,7 @@ export default async function Home() {
       <Navbar />
       <Banner />
       <TinaAbout />
+      <OurTeam/>
       <Services />
       <Help />
       <Blog blogs={blogs} />
