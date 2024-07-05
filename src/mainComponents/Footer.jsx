@@ -3,10 +3,12 @@ import { IoCall } from "react-icons/io5";
 import { FaRegMap } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
+import UpFooter from "./home/UpFooter";
 
 function Footer() {
     return (
         <>
+        <UpFooter/>
             <div className="bg-[#1b6b93]">
                 <div className="bg-[url('https://www.physio-therapies.co.uk/wp-content/uploads/2023/11/xv.png')]  bg-repeat py-20  text-white " >
                     <div className="lg:container w-full px-3 mx-auto flex  justify-between lg:flex-row flex-col items-start gap-14 ">

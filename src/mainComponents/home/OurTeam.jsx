@@ -28,9 +28,26 @@ function OurTeam() {
         },
     ]
 
+    const videos = [
+        1, 2, 3, 4
+    ]
+
     return (
         <div className='w-full'>
-            <div className='flex justify-end mb-20 md:mt-40'>
+
+            <div className='md:container md:mt-40 mt-20 mx-auto gap-3 px-3 grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 mb-10 md:mb-0'>
+                {
+                    videos.map((item, index) => {
+                        return (
+                            <div className='p-3 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)] flex justify-center items-center border' key={index}>
+                                <iframe className='w-full h-full'  src="https://www.youtube.com/embed/CP5k2gRabvc?si=7P05PElhBdnjHnOZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+
+            <div className='flex justify-end mb-20 md:mt-32'>
                 <div className='bg-[#85a6bc] text-white p-5 md:w-[63%]'>
                     <h1 className='sm:text-4xl text-2xl font-bold '>OUR TEAM</h1>
                     <p className='font-serif sm:text-2xl text-lg mt-3'>Feel free to call one of our professionals.</p>
@@ -64,10 +81,10 @@ function OurTeam() {
                 <div className='md:container lg:px-20 flex relative justify-end mx-auto px-3' >
                     <img className='md:h-[40rem] h-[32rem] right-0 w-[57rem] object-cover object-center' src="https://uploads-ssl.webflow.com/62d2b237ccbaccb4fde585eb/62e041417f3e447f4fa1d85f_aleksandra-sapozhnikova-DnMoQpu7AVs-unsplash.jpg" alt="" />
 
-                    <div className='absolute bg-[#3382a5e6] sm:w-[26rem] w-[18rem] sm:top-20 md:left-32 px-3 md:px-20 py-10 text-white'>
+                    <div className='absolute bg-[#3382a5e6] sm:w-[26rem] w-[18rem] sm:top-20 md:left-32 px-3 md:px-20 py-[38px] text-white'>
                         <h1 className='text-3xl font-bold'>WHY YOU SHOULD HAVE THERAPY?</h1>
                         <p className='font-serif text-lg font-extralight mt-8'>
-                        Organizing your feelings and thoughts, getting to know yourself, increasing your self-esteem, developing your emotional intelligence, improving your relationships need attention. Come talk to us today!
+                            Organizing your feelings and thoughts, getting to know yourself, increasing your self-esteem, developing your emotional intelligence, improving your relationships need attention. Come talk to us today!
                         </p>
                         <Button className='mt-8 rounded'>EXPLORE</Button>
                     </div>
