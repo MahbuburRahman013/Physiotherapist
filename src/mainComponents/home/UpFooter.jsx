@@ -21,7 +21,7 @@ function UpFooter() {
                             <Input className='bg-transparent placeholder:text-white' placeholder='Email' type='email' />
                         </div>
                         <textarea rows="3" className='bg-transparent placeholder:text-white p-5 w-full border-white border' placeholder='Your Message' type='text' />
-                        <Button className='w-fit px-8 rounded-[5px] uppercase'>Let's Talk</Button>
+                        <Button className='w-fit px-8 rounded-[5px] uppercase'>Let&apos;s Talk</Button>
                     </div>
 
                 </div>
