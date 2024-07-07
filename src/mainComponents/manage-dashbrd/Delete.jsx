@@ -32,6 +32,8 @@ function Delete({ blog }) {
                                 icon: "success"
                             });
                             router.push('/dashboard/manage')
+                            router.push('/dashboard/manage')
+                            router.push('/dashboard/manage')
                         }
                     })
 
