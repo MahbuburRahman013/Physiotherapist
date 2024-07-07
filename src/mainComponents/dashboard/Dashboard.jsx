@@ -13,6 +13,7 @@ import { Loader2 } from 'lucide-react';
 import 'froala-editor/js/plugins/lists.min.js';
 import 'froala-editor/js/plugins/paragraph_format.min.js';
 import toast, { Toaster } from 'react-hot-toast';
+import { transliterate } from 'transliteration';
 
 
 const img_hosting_api = `https://api.imgbb.com/1/upload?key=dba83ae483256811942a712f4a815835`
@@ -42,7 +43,8 @@ function Dashboard() {
         e.preventDefault()
         const form = e.target;
         const title = form.title.value;
-        const queryTitle = title.toLowerCase().split(' ').join('-');
+        const queryTitle = transliterate(title).toLowerCase().replace(/[^\w\s-]/g, '').trim()
+        .replace(/\s+/g, '-');
         const photo = form.photo.files[0];
         const imgFile = { image: photo }
         const res = await axiosPublic.post(img_hosting_api, imgFile, {
@@ -123,18 +125,7 @@ function Dashboard() {
                         model={content}
                         onModelChange={handleModelChange}
                         config={{
-                            placeholderText: 'Edit Your Blog Details Here!',
-                            charCounterCount: false,
-                            toolbarButtons: [
-                                'bold', 'italic', 'underline',
-                                'fontSize', 'color',
-                                'outdent', 'indent', 'undo', 'redo', 'clearFormatting', 'selectAll', 'align', 'formatOL', 'formatUL'
-                            ],
-                            fontSizeSelection: true,
-                            fontSize: ['8', '10', '12', '14', '16', '18', '24', '30', '36', '42', '48'],
-                            listAdvancedTypes: true,
-
-
+                            placeholderText: 'Write Your Blog Details Here!',
                         }}
                     />
 

@@ -28,7 +28,8 @@
     "sweetalert2": "^11.11.1",
     "swiper": "^11.1.3",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "transliteration": "^2.3.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
